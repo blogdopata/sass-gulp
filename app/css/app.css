@@ -22,3 +22,26 @@ h1, h2, h3, h4, h5, h6 {
     .container {
       width: 1000px;
       background-color: White; } }
+
+.navegacion {
+  background-color: #101068; }
+  .navegacion h2 {
+    margin: 0;
+    float: left;
+    display: none; }
+    @media only screen and (min-width: 768px) {
+      .navegacion h2 {
+        display: block; } }
+  .navegacion nav {
+    display: inline;
+    margin-top: 10px; }
+    @media only screen and (min-width: 768px) {
+      .navegacion nav {
+        float: right; } }
+    .navegacion nav a {
+      color: #EEE8D6;
+      font-size: 1.3em;
+      text-decoration: none;
+      text-align: center; }
+      .navegacion nav a:hover {
+        color: #FFBA00; }

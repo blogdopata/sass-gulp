@@ -13,6 +13,11 @@ $color-fondo :  rebeccapurple;
 $color-principal: $blanco;
 $color-titulos: $amarillo;
 $fondo-navegacion: $azulOscuro;
+$fondo-boton: rebeccapurple;
+$color-borde-noticia: red;
+$color-header-noticia: green;
+$color-texto-noticia: yellow;
+$texto-boton: gray;
 
 $fuente-principal:'Open Sans', sans-serif;;
 $fuente-titulos: 'Bitter', serif;
@@ -21,13 +26,13 @@ $tablet :768px;
 $desktop:1024px;
 
 @mixin tablet{
-	@media only screen and (min-width:#{$tablet}){
+	@media  screen and (min-width:#{$tablet}){
 		@content;
 	}
 } 
 
 @mixin desktop{
-	@media only screen and (min-width:#{$desktop}){
+	@media screen and (min-width:#{$desktop}){
 		@content;
 	}
 }
@@ -40,13 +45,10 @@ body{
 	font-size:1.4rem;
 	margin:0;
 	padding:0;
-	
-
 }
 h1,h2,h3,h4,h5,h6{
 	color: $color-titulos;
 	font-family: $fuente-titulos;	
-
 }
 .container{
 	margin:0 auto;
@@ -54,39 +56,223 @@ h1,h2,h3,h4,h5,h6{
 
 	@include tablet{
 		width:90%;
-		background-color:red;
+	
 	}
 	@include desktop{
 		width:1000px;
-		background-color:White;
+			
 	}
 
 }
-.navegacion{
-	background-color:$fondo-navegacion;
-	h2{
-		margin: 0;
-		float: left;
-		display: none;
 
-		@include tablet{
-			display: block;
-		}
+@mixin clearfix{
+	&:after{
+	content:"";
+	display:table;
+	clear: both;
+	}	
+}
+
+.navegacion {
+  @include clearfix;
+  padding:10px;
+   h2 {
+      margin:0;
+      float:left;
+      display: none;
+      @include tablet {
+        display: block;
+      }
+  }
+  nav {
+    display: inline;
+    margin-top:10px;
+    @include tablet {
+      float:right;
+    }
+      a {
+          color:$blanco;
+          font-size: 1.3rem;
+          text-decoration: none;
+          text-align:center;
+          display: block;
+          margin-bottom: 20px;
+          @include tablet {
+            display: inline;
+            text-align: left;
+          }
+          &:hover {
+            color:$amarillo;
+          }
+      }
+  }
+}
+.background{
+	display:table;
+	width:100%;
+	position: relative;
+	.contenido{
+		display: table-cell;
+		vertical-align: bottom;
+		padding:0 20px 20px 20px;
+		position:relative;
+		font-size: 1rem;
 	}
-	nav{
-		display: inline;
-		margin-top: 10px;
-		@include tablet{
-			float: right;
-		}
-		a{
-			color:$blanco;
-			font-size: 1.3em;
-			text-decoration: none;
-			text-align: center;
-			&:hover{
-				color:$amarillo;
-			}
-		}
+}
+
+
+@mixin imagenFondo($imagen, $height: 100vh, $bgPos: center center) {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0,0,0,.6)),  url($imagen);
+  background-repeat: no-repeat;
+  background-position: $bgPos;
+  background-size:cover;
+  height: $height;
+}
+
+// fondo de imagen
+.background {
+  display: table;
+  width:100%;
+  position: relative;
+  .contenido {
+    display: table-cell;
+    vertical-align: bottom;
+    padding: 0 20px 20px 20px;
+    position: relative;
+    font-size:1.3rem;
+    p {
+      color:$blanco;
+      font-weight: 700;
+    }
+  }
+}
+
+// add  mixin
+.london {
+  @include imagenFondo('../img/imagen02.jpg', 600px, top center );
+}
+
+.estacion {
+  @include imagenFondo('../img/imagen03.jpg', 200px);
+}
+/* CONTENIDO PRINCIPAL */
+#contenido-principal{
+	box-sizing: border-box;
+	background-color:black;
+
+	@include tablet {
+		width: 67.7%;
+		float: left;
 	}
-}	
+}
+aside{
+	@include tablet{
+		vertical-align:top;
+		width:30%;
+		float: right;
+		background-color:blue;
+
+	}
+}
+
+/** NOTICIAS **/
+.noticia {
+  padding-top: 10px;
+  margin-bottom: 30px;
+  border-top: 2px dotted $color-borde-noticia;
+
+  h3 {
+    color: $color-header-noticia;
+    margin-bottom:10px;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+  }
+
+  img {
+    float:left;
+    margin-right: 10px;
+  }
+
+  p {
+    font-size:1rem;
+    color:$color-texto-noticia;
+  }
+}
+
+.btn {
+  display: block;
+  color:$texto-boton;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  font-size: 1rem;
+  background-color:$fondo-boton;
+  transition: 1s;
+  @include tablet{
+  	display: inline-block;
+  }
+  @include desktop{
+  	display: inline;
+  	float: right;
+  }
+  &:hover{
+  	background-color: darken($fondo-boton,20);
+  }
+}
+.noticia{
+	overflow: hidden;
+}
+
+
+
+table {
+  margin-top: 30px;
+  width:100%;
+  text-align: left;
+  font-size: 1rem;
+  border-collapse: collapse;
+  > caption {
+    text-align: left;
+    font-family:$fuente-titulos;
+    font-size: 1.8rem;
+    padding:5px;
+    color:$amarillo;
+    margin-bottom: 20px;
+  }
+  thead tr th  {
+    background-color: darken($azul, 20);
+    color:$blanco;
+    font-size: 1.3rem;
+  }
+  > thead,
+  > tbody {
+    > tr {
+      color:$blanco;
+      background-color: darken($azul,10);
+      &:nth-child(odd) {
+        background-color: $azul;
+      }
+      &:hover {
+        background-color: darken($amarillo,5);
+      }
+      th,
+      td {
+        padding:10px;
+        border-bottom: 1px dotted $azulOscuro;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+

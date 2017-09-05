@@ -1,0 +1,25 @@
+.background{
+  display:table;
+  width:100%;
+  position: relative;
+  .contenido{
+    display: table-cell;
+    vertical-align: bottom;
+    padding: 0 20px 20px 20px;
+    position:relative;
+    font-size: 1.4rem;
+    p{
+      color:$blanco;
+      font-weight: bold;
+    }
+  }
+}
+
+
+.london{
+  @include imagenFondo('../img/imagen02.jpg', 600px, top center);
+}
+
+.estacion{
+  @include imagenFondo('../img/imagen03.jpg', 200px);
+}

@@ -22,6 +22,34 @@ h1, h2, h3, h4, h5, h6 {
       width: 1000px;
       background-color: White; } }
 
+.background {
+  display: table;
+  width: 100%;
+  position: relative; }
+  .background .contenido {
+    display: table-cell;
+    vertical-align: bottom;
+    padding: 0 20px 20px 20px;
+    position: relative;
+    font-size: 1.4rem; }
+    .background .contenido p {
+      color: #EEE8D6;
+      font-weight: bold; }
+
+.london {
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.6)), url("../img/imagen02.jpg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  height: 600px; }
+
+.estacion {
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.6)), url("../img/imagen03.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 200px; }
+
 .navegacion {
   overflow: hidden;
   padding: 10px;
@@ -52,80 +80,6 @@ h1, h2, h3, h4, h5, h6 {
           text-align: left; } }
       .navegacion nav a:hover {
         color: #FFBA00; }
-
-.background {
-  display: table;
-  width: 100%;
-  position: relative; }
-  .background .contenido {
-    display: table-cell;
-    vertical-align: bottom;
-    padding: 0 20px 20px 20px;
-    position: relative;
-    font-size: 1.4rem; }
-    .background .contenido p {
-      color: #EEE8D6;
-      font-weight: bold; }
-
-.london {
-  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.6)), url("../img/imagen02.jpg");
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-size: cover;
-  height: 600px; }
-
-.estacion {
-  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.6)), url("../img/imagen03.jpg");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  height: 200px; }
-
-#contenido-principal {
-  box-sizing: border-box; }
-  @media only screen and (min-width: 768px) {
-    #contenido-principal {
-      width: 66.7%;
-      float: left;
-      padding-right: 40px; } }
-
-@media only screen and (min-width: 768px) {
-  aside {
-    width: 33.3%;
-    float: right; } }
-
-/* NOTICIAS */
-.noticia {
-  padding-top: 10px;
-  margin-bottom: 30px;
-  border-top: 2px dotted rebeccapurple; }
-  .noticia h3 {
-    color: #ffc833;
-    margin-bottom: 10px;
-    font-size: 1.4rem;
-    text-transform: uppercase; }
-  .noticia img {
-    float: left;
-    margin-right: 10px; }
-  .noticia p {
-    font-size: 1rem;
-    color: #000000; }
-
-.btn {
-  display: block;
-  background-color: #fe2d28;
-  color: #EEE8D6;
-  text-decoration: none;
-  text-align: center;
-  text-transform: uppercase;
-  padding: 5px 10px;
-  font-size: 1rem;
-  transition: all .3s ease; }
-  @media only screen and (min-width: 768px) {
-    .btn {
-      display: inline-block; } }
-  .btn:hover {
-    background-color: #bf0501; }
 
 table {
   margin-top: 30px;
@@ -160,13 +114,48 @@ table {
   .galeria li.imagen {
     float: left;
     list-style: none;
-    width: 24.25%; }
+    width: 19.2%; }
     .galeria li.imagen:nth-child(n) {
       margin-right: 1%;
       margin-bottom: 1%; }
-    .galeria li.imagen:nth-child(4n + 1) {
+    .galeria li.imagen:nth-child(5n + 1) {
       margin-right: 0;
       margin-bottom: 0; }
     .galeria li.imagen img {
       display: block;
-      max-width: 100%; }
+      max-width: 100%;
+      border-radius: 10px; }
+
+.btn {
+  border-radius: 10px;
+  display: block;
+  background-color: #fe2d28;
+  color: #EEE8D6;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  font-size: 1rem;
+  transition: all .3s ease; }
+  @media only screen and (min-width: 768px) {
+    .btn {
+      display: inline-block; } }
+  .btn:hover {
+    background-color: #bf0501; }
+
+/* NOTICIAS */
+.noticia {
+  padding-top: 10px;
+  margin-bottom: 30px;
+  border-top: 2px dotted rebeccapurple; }
+  .noticia h3 {
+    color: #ffc833;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    text-transform: uppercase; }
+  .noticia img {
+    float: left;
+    margin-right: 10px; }
+  .noticia p {
+    font-size: 1rem;
+    color: #000000; }

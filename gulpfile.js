@@ -3,6 +3,7 @@ var sass = require('gulp-sass');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 var autoprefixer = require('gulp-autoprefixer');
+var concat = require('gulp-concat');
 
 gulp.task('sass', function() {
   gulp.src('scss/app.scss')

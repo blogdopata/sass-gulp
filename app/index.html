@@ -5,6 +5,7 @@
     <title>Hola Mundo</title>
 
     <link rel="stylesheet" href="css/app.css">
+    <script src="js/scripts.js"></script>
   </head>
   <body>
 
@@ -25,7 +26,33 @@
             <p>Nam accumsan aliquet purus in aliquam. Fusce gravida sapien eu leo efficitur, eu tempus ante volutpat. Integer varius odio eget leo fringilla, in interdum odio tincidunt. Sed ullamcorper pretium arcu vitae facilisis.</p>
           </div> <!--.contenido-->
       </div> <!--.london-->
+      
 
+      <div  id="slider" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+              <li data-target="#slider" data-slide-to="0" class="active"></li>
+              <li data-target="#slider" data-slide-to="1"></li>
+          </ol>
+          <div class="carousel-inner">
+              <div class="item active">
+                  <img src="http://placehold.it/1000x250.jpg" alt="">
+                 
+              </div>
+               <div class="item">
+                  <img src="http://placehold.it/1000x250.jpg" alt="">
+                 
+              </div>
+
+          </div>
+          <a href="#slider" class="left carousel-control" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          </a>
+
+          <a class="right carousel-control" href="#slider"  role="button" data-slide=next>
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          </a>
+
+      </div>
 
 
     <div id="contenido-principal" class="row">

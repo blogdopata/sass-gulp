@@ -5,8 +5,15 @@ global.jQuery = require('jquery');
 bootstrap = require('bootstrap');
 Mustache = require('mustache');
 
-jQuery(document).ready(function(){
-	alert("Testeo xDhahaaha");
+jQuery(document).ready(function($){
+	var jqxhr = $.getJSON('data.json', function(){
+
+	}).done(function(data){
+		console.log(data);
+		var template = $('#template').html();
+		var mostrarTemplate = Mustache.render(template, data );
+		$('#galeria-londres').html(mostrarTemplate);
+	});
 });
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{"bootstrap":2,"jquery":15,"mustache":16}],2:[function(require,module,exports){

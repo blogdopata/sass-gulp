@@ -146,39 +146,26 @@
 
   <div id="galeria" class="galeria">
     <h2>Galería</h2>
+    
+    <div id="galeria-londres"></div>
+    <script id="template" type="x-tmpl-mustache">
 
-    <li class="imagen">
-        <img src="http://placehold.it/300x300">
-    </li>
-    <li class="imagen">
-        <img src="http://placehold.it/300x300">
-    </li>
-    <li class="imagen">
-        <img src="http://placehold.it/300x300">
-    </li>
-    <li class="imagen">
-        <img src="http://placehold.it/300x300">
-    </li>
-    <li class="imagen">
-        <img src="http://placehold.it/300x300">
-    </li>
-    <li class="imagen">
-        <img src="http://placehold.it/300x300">
-    </li>
-    <li class="imagen">
-        <img src="http://placehold.it/300x300">
-    </li>
-    <li class="imagen">
-        <img src="http://placehold.it/300x300">
-    </li>
-    <li class="imagen">
-        <img src="http://placehold.it/300x300">
-    </li>
-    <li class="imagen">
-        <img src="http://placehold.it/300x300">
-    </li>
+      {{#galeria}}
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+            <img src="{{image}}" alt="">
+          </div>
+          <div class="caption">
+            <h3 class="tex-center"> {{destino}}      </h3> 
+          </div>
+
+         </div>
+
+      {{/#galeria}}
+
+    </script>
   </div>
-
+ 
   <div id="servicios" class="servicios">
     <h2>Servicios</h2>
       <ul class="servicios-lista row" >

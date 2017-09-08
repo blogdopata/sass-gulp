@@ -6769,56 +6769,8 @@ h1, h2, h3, h4, h5, h6 {
   color: #FFBA00;
   font-family: "Bitter", serif; }
 
-.container {
-  margin: 0 auto; }
-  @media only screen and (min-width: 768px) {
-    .container {
-      width: 90%;
-      background-color: red; } }
-  @media only screen and (min-width: 1024px) {
-    .container {
-      width: 1000px;
-      background-color: White; } }
-
-.row {
-  overflow: hidden; }
-  @media only screen and (min-width: 768px) {
-    .row {
-      margin: 0 -1em; } }
-
-[class*='col-'] {
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  float: left;
-  padding: 1em;
-  width: 100%; }
-
-@media only screen and (min-width: 768px) {
-  .col-1 {
-    width: 8.33333%; }
-  .col-2 {
-    width: 16.66667%; }
-  .col-3 {
-    width: 25%; }
-  .col-4 {
-    width: 33.33333%; }
-  .col-5 {
-    width: 41.66667%; }
-  .col-6 {
-    width: 50%; }
-  .col-7 {
-    width: 58.33333%; }
-  .col-8 {
-    width: 66.66667%; }
-  .col-9 {
-    width: 75%; }
-  .col-10 {
-    width: 83.33333%; }
-  .col-11 {
-    width: 91.66667%; }
-  .col-12 {
-    width: 100%; } }
+div.caption {
+  min-height: 80px; }
 
 .background {
   display: table;
@@ -6945,7 +6897,8 @@ table {
 .noticia {
   padding-top: 10px;
   margin-bottom: 30px;
-  border-top: 2px dotted rebeccapurple; }
+  border-top: 2px dotted rebeccapurple;
+  overflow: hidden; }
   .noticia h3 {
     color: #ffc833;
     margin-bottom: 10px;

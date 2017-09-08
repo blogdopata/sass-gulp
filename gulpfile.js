@@ -44,6 +44,13 @@ gulp.task('js',function(){
     .pipe(reload({stream:true}))
 });
 
+// Task para importar archivos q usa bootstrap a nuestra app
+gulp.task('moverFuentes', function(){
+  gulp.src('./node_modules/bootstrap/dist/fonts/*.{eot,svg,ttf,woff,woff2}')
+  .pipe(gulp.dest('app/fonts'))
+});
+
+
 
 
 // watch Sass files for changes, run the Sass preprocessor with the 'sass' task and reload
@@ -56,7 +63,7 @@ gulp.task('serve', ['sass'], function() {
 
 });
 
-gulp.task('watch', ['sass', 'serve','js'], function() {
+gulp.task('watch', ['sass', 'serve','js','moverFuentes'], function() {
   gulp.watch(["scss/*.scss"], ['sass']);
   gulp.watch(["js/*.js"], ['js']);
 });

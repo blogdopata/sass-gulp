@@ -1,0 +1,67 @@
+body{
+	background-color:   $color-fondo;
+	color :$color-principal;
+	font-family : $fuente-principal;
+	font-size:1.4rem;
+	margin:0;
+	padding:0;
+}
+
+h1,h2,h3,h4,h5,h6{
+	color: $color-titulos;
+	font-family: $fuente-titulos;	
+}
+
+.container{
+	margin:0 auto;
+	@include tablet{
+		width:90%;
+		background-color:red;
+	}
+	@include desktop{
+		width:1000px;
+		background-color:White;
+	}
+}	
+.row {
+	@include clearfix;
+	@include tablet{
+		margin: 0 -1em;
+	}
+
+}
+[class*='col-']{
+	@include border-box;	
+	float:left;
+	padding:1em;
+	width:100%;
+
+	
+}
+
+@include tablet{
+	@for  $i from 1 through $numero-columnas{
+		.col-#{$i}{
+			width:100% / $numero-columnas * $i;
+		}
+	}
+
+}
+
+// #contenido-principal{
+// 	box-sizing:border-box;
+// 	@include tablet{
+// 		width: 66.7%;
+// 		float: left;
+// 		padding-right:40px;
+// 	}
+// }
+
+// aside{
+// 	@include tablet{
+// 		width: 33.3%;
+// 		float: right;
+// 	}
+// }
+
+

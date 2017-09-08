@@ -1,12 +1,12 @@
 {
   "name": "cursosass",
   "version": "1.0.0",
-  "description": "archivo para curso de UDEMY",
+  "description": "Mi workflow :D ",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Juan Pablo De la torre Valdez",
+  "author": "Victor Caballero",
   "license": "ISC",
   "devDependencies": {
     "bootstrap": "^3.3.7",
@@ -15,8 +15,12 @@
     "gulp-autoprefixer": "^3.1.1",
     "gulp-browserify": "^0.5.1",
     "gulp-concat": "^2.6.1",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-htmlmin": "^3.0.0",
     "gulp-install": "^1.1.0",
+    "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^3.0.0",
     "jquery": "^3.2.1",
     "merge-stream": "^1.0.1",
     "mustache": "^2.3.0"

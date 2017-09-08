@@ -6,6 +6,10 @@ var autoprefixer = require('gulp-autoprefixer');
 var concat = require('gulp-concat');
 var browserify = require('gulp-browserify');
 var merge = require('merge-stream');
+var uglify = require ('gulp-uglify');
+var cssmin = require('gulp-cssmin');
+var rename = require('gulp-rename');
+var htmlmin = require('gulp-htmlmin');
 
 var fuentesJS = ['js/functions.js','js/scripts.js']
 
@@ -33,13 +37,23 @@ gulp.task('sass', function() {
 
         return merge(archivosSASS, archivosCSS)
               .pipe(concat('app.css'))
+              .pipe(cssmin())
+              .pipe(rename({suffix:'.min'}))
               .pipe(gulp.dest('app/css'));
 });
+
+gulp.task('minify', function(){
+  return gulp.src('./*.html')
+              .pipe(htmlmin({collapseWhitespace:true}))
+              .pipe(gulp.dest('app'))
+});
+
 
 gulp.task('js',function(){
   gulp.src(fuentesJS)
     .pipe(concat('scripts.js'))
     .pipe(browserify())
+    .pipe(uglify()) // aca para saber que se tien que comprimir mimificar depues de usar el browserify
     .pipe(gulp.dest('app/js'))
     .pipe(reload({stream:true}))
 });
@@ -63,7 +77,7 @@ gulp.task('serve', ['sass'], function() {
 
 });
 
-gulp.task('watch', ['sass', 'serve','js','moverFuentes'], function() {
+gulp.task('watch', ['sass', 'serve','js','moverFuentes','minify'], function() {
   gulp.watch(["scss/*.scss"], ['sass']);
   gulp.watch(["js/*.js"], ['js']);
 });

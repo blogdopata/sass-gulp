@@ -6,9 +6,11 @@ jQuery(document).ready(function($){
 	var jqxhr = $.getJSON('data.json', function(){
 
 	}).done(function(data){
-		console.log(data);
-		var template = $('#template').html();
-		var mostrarTemplate = Mustache.render(template, data );
-		$('#galeria-londres').html(mostrarTemplate);
+			
+		 var template = $('#template').html();
+		 var mostrarTemplate = Mustache.render(template, data );
+		 $('#galeria-londres').html(mostrarTemplate);
+
 	});
+
 });
